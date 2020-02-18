@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var a = 0; var b = 0;
+            do{
+                a = parseInt(prompt('Введите переменную номер 1'));
+                b = parseInt(prompt('Введите переменную номер 2'));
+            }while(a * b < 0 || Number.isNaN(a) == true || Number.isNaN(b) == true);
+            var res = (Math.sqrt(a * b)) == 4 ? 'Равно' :
+            (Math.sqrt(a*b))<4 ? 'Мало' : 'Много';
+            document.write(res);
+        </script>
+    </body>
+</html>

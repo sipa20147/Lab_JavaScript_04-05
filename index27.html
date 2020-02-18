@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var a = prompt('Введите значение номер 1', 0); var b = prompt('Введите значение номер 2', 0);
+            var result = 0;
+            (Number.isNaN(parseInt(a)) == false && Number.isNaN(parseInt(b)) == false) ?
+            (Number.isInteger(a)  && Number.isInteger(b)) ? result = ((parseInt(a) + parseInt(a)) == parseInt(b)) ? 'Значения равны' : 'Значения не равны':
+            (Number.isInteger(a)) ? result = ((parseInt(a) + parseInt(a)) === parseFloat(b)) ? 'Значения равны' : 'Значения не равны' :
+            (Number.isInteger(b)) ? result = ((parseFloat(a) + parseFloat(a)) === parseInt(b)) ? 'Значения равны' : 'Значения не равны' :
+            result = ((parseFloat(a) + parseFloat(a)) === parseFloat(b)) ? 'Значения равны' : 'Значения не равны':
+            result = ((a + a) == b) ? 'Значения равны' : 'Значения не равны';
+            document.write(result);
+        </script>
+    </body>
+</html>

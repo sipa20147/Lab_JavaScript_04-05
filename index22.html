@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta>
+        <title>Операторы ветвлений и условий в JavaScript</title>
+    </head>
+    <body>
+        <script>
+            var year = prompt('В каком году у Вас в группе начал вести занятия Виталий Валентинович?', '');
+            if ((parseInt(year) < 2019 && parseInt(year) > 99) || (parseInt(year) < 19) ){
+                alert('Да не может быть! Это слишком рано..');
+            }
+            else if(parseInt(year) > 2019 || (parseInt(year) > 19 && parseInt(year) < 100) ) {
+                alert('Да вы что! Как-то поздновато..');
+            }
+            else alert('Да вы знаток');
+        </script>
+    </body>
+</html>

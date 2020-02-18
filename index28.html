@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример работы с пользователем</title>
+    </head>
+    <body>
+        Введите слово. <br>
+        <script>
+            var where = window.prompt('Куда заглянем сегодня?');
+            switch (where){
+                case "ВКонтакте":{
+                window.location = "http://www.vk.com";
+                break;}
+                case "Одноклассники":
+                {window.location = "http://www.ok.ru";
+                break;}
+                case "Фейсбук":
+                {window.location = "http://www.facebook.com";
+                break;}
+                case "Инстаграм":
+                {window.location = "http://www.instagram.com";
+                break;}
+                case "Твиттер":
+                {window.location = "http://www.twitter.com";
+                break;}
+                default:
+                window.location = "http://www.exam.by";
+            }
+        </script>
+    </body>
+</html>

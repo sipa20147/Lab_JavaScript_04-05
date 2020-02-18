@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var a = 0; var b = 0; var c = 0;
+            while (a <= 0 && b <= 0 && a <= 0 || Number.isNaN(a) == true || Number.isNaN(b) == true){
+                a = parseInt(prompt('Введите катет номер 1',0));
+                b = parseInt(prompt('Введите катет номер 2',0));
+                c = parseInt(prompt('Введите гипотенузу',0));
+            }
+            var res = (a * a + b * b == c * c) ? 'Ура: угадали длины сторон треугольника': 'Надо учить теорему';
+            document.write(res);
+        </script>
+    </body>
+</html>

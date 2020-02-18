@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Пример 30</title>
+    </head>
+    <body>
+        <script>
+            var x = prompt('Введите число x:');
+            var y = prompt('Введите число y:');
+
+            if (y==0)
+        
+{
+                alert('Число '+x+' в степени '+y+' равно '+ 0);
+                exit;
+}
+
+            if (y % 1 == 0 && Number.isNaN(parseInt(x)) == false ){
+                if (y > 0){
+                    var z = x;
+                    var i = 2;
+                    while (i <= y){
+                        z = z * x;
+                        i++
+                    }
+                }
+
+
+                else if (y < 0){
+                    var z = 1 / x;
+                    var i = -2;
+                    while (i >= y){
+                        z = z / x;
+                        i--
+                    }
+                }
+                alert('Число '+x+' в степени '+y+' равно '+ z);
+            }
+            
+            else if (Number.isInteger(y) == false)
+            
+            {
+var b = Math.pow(x, y);
+
+                alert('Число '+x+' в степени '+y+' равно '+ b);
+            }
+else
+            alert('Ошибка ввода!!! Попробуйте еще раз');
+        </script>
+    </body>
+</html>
