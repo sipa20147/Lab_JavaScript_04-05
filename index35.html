@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <script>
-            var color_mushroom = prompt('Какого цвета гриб?');
-            var skirt_mushroom  = confirm('Есть на ножке юбка?');
-            switch (color_mushroom){
-                case 'белый':{
-                    if (skirt_mushroom) alert('С грибами нужно быть внимательными');
-                    else alert('Вы нашли белый гриб');
-                    break;
-                }
-                case 'красный':{
-                    if (skirt_mushroom) alert('А не мухомор ли это?');
-                    else alert('Может это подосиновик');
-                    break;
-                }
-                case ' желтый':{
-                    alert('С грибами нужно быть внимательными');
-                    break;
-                }
-                case 'коричневый':{
-                    alert('С грибами нужно быть внимательными');
-                    break;
-                }
-                default: alert('С грибами нужно быть внимательными');
-            }
-        </script>
-    </body>
+<head>
+<title>Детектор ядовитых грибов</title>
+</head>
+<body>
+	<script>
+		var color_mushroom = prompt('Введите описание гриба по цвету: ');
+		var skirt_mushroom = prompt('Напишите, есть ли у гриба юбка (есть/нет): ');
+        var message;
+		if( color_mushroom == null)
+			color_mushroom = "черный";
+		if( skirt_mushroom == null)
+			skirt_mushroom = "есть";
+		switch(color_mushroom.toLowerCase())
+		{
+		case "белый":
+        message = (skirt_mushroom == 'есть') ? "С грибами надо быть внимательными!" : "Вы нашли белый гриб!";
+			break;
+		case "жёлтый":
+        message = "С грибами надо быть внимательными!";
+			break;
+		case "красный":
+        message = (skirt_mushroom == 'есть') ? "А не мухомор ли это?!" : "Возможно это подосиновик.";
+			break;
+		case "коричневый":
+        message = "С грибами надо быть внимательными!";
+			break;
+		default:
+        message = "Ошибка ввода!!! Попробуйте снова";
+		}
+		alert( message);
+	</script>
+</body>
 </html>

@@ -18,6 +18,14 @@
                 exit;
 }
 
+if (x < 0)
+        
+{
+                alert('Ошибка ввода!!! Попробуйте еще раз');
+                exit;
+}
+
+
             if (y % 1 == 0 && Number.isNaN(parseInt(x)) == false ){
                 if (y > 0){
                     var z = x;
@@ -43,7 +51,7 @@
             else if (Number.isInteger(y) == false)
             
             {
-var b = Math.pow(Math.abs(x), y);
+            var b = Math.pow(Math.abs(x), y);
 
                 alert('Число '+x+' в степени '+y+' равно '+ b);
             }
@@ -52,6 +60,3 @@ else
         </script>
     </body>
 </html>
-
-
-
