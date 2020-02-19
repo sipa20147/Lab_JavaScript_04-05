@@ -6,7 +6,10 @@
     <body>
         <script>
             var x = prompt('Введите число x:');
+            x = x.replace(/\,/g, '.');
             var y = prompt('Введите число y:');
+            y = y.replace(/\,/g, '.');
+
 
             if (y==0)
         
@@ -49,3 +52,6 @@ else
         </script>
     </body>
 </html>
+
+
+
