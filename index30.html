@@ -12,7 +12,7 @@
 
             var y = prompt('Введите число y:');
             y = y.replace(/\,/g, '.');
-            
+
             var result = 0.0;
 
 
@@ -29,7 +29,8 @@
                 var h = 1;
                 var u = 1;
 
-                if (i > t) var j = t;
+                if (i > t) 
+                     var j = t;
                 else var j = i;
                 while (h < j)
                 {
@@ -85,6 +86,7 @@
                 }
                 var ver = w;
                 var niz = 0.0;
+
                 while (pw(u, vol)  !== w)
                 {
                     if (u === (ver + niz) / 2) 
@@ -105,14 +107,17 @@
                 {
                     alert('Не допускаются такие числа');
                 }
-                else {if (parseInt(y) === parseFloat(y)) 
-                     result = pw(x,y);
-                else result = pw_(x,y);
-                if (Number.isNaN(parseFloat(result))) 
-                    alert(result);
-                if (result == Infinity)
-                     alert('Превышен диапазон допустивых значений');
-                else alert('Число '+x+' в степени '+y+' равно '+ result);}
+                else 
+                {
+                    if (parseInt(y) === parseFloat(y)) 
+                         result = pw(x,y);
+                    else result = pw_(x,y);
+                    if (Number.isNaN(parseFloat(result))) 
+                        alert(result);
+                    if (result == Infinity)
+                        alert('Превышен диапазон допустивых значений');
+                    else alert('Число '+x+' в степени '+y+' равно '+ result);
+                }
             }
             else alert('Не допустимый диапазон вводимых чисел');
         </script>
