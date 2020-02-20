@@ -1,62 +1,120 @@
+81 lines (80 sloc)  3.01 KB
+  
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Пример 30</title>
+        <title>Степень</title>
     </head>
     <body>
         <script>
             var x = prompt('Введите число x:');
             x = x.replace(/\,/g, '.');
+
             var y = prompt('Введите число y:');
             y = y.replace(/\,/g, '.');
-
-
-            if (y==0)
-        
-{
-                alert('Число '+x+' в степени '+y+' равно '+ 1);
-                exit;
-}
-
-if (x < 0)
-        
-{
-                alert('Ошибка ввода!!! Попробуйте еще раз');
-                exit;
-}
-
-
-            if (y % 1 == 0 && Number.isNaN(parseInt(x)) == false ){
-                if (y > 0){
-                    var z = x;
-                    var i = 2;
-                    while (i <= y){
-                        z = z * x;
-                        i++
-                    }
-                }
-
-
-                else if (y < 0){
-                    var z = 1 / x;
-                    var i = -2;
-                    while (i >= y){
-                        z = z / x;
-                        i--
-                    }
-                }
-                alert('Число '+x+' в степени '+y+' равно '+ z);
-            }
             
-            else if (Number.isInteger(y) == false)
-            
+            var result = 0.0;
+
+
+            if(y > 1 && y.length > 5) 
             {
-            var b = Math.pow(Math.abs(x), y);
-
-                alert('Число '+x+' в степени '+y+' равно '+ b);
+                 alert('Превышен диапазон допустимых значений'); 
+                 exit;
             }
-else
-            alert('Ошибка ввода!!! Попробуйте еще раз');
+            
+            function nod(w, q)
+            {
+                var i = Math.abs(w);
+                var t = Math.abs(q);
+                var h = 1;
+                var u = 1;
+
+                if (i > t) var j = t;
+                else var j = i;
+                while (h < j)
+                {
+                    h++;
+                    if (t % h === 0 && i % h === 0) 
+                    {
+                        t /= h;
+                        i /= h;
+                        u *= h;
+                        h = 1;
+                    }
+                }
+                return u;
+            }
+
+            function pw(w,q){
+                if (q > 0)
+                {
+                    var r = 1;
+                    for (var i = 0; i < q; i++){
+                        r *= w;
+                    }
+                }
+                else if (q < 0)
+                {
+                    var r = 1;
+                    for (var i = 0; i > q; i--)
+                    {
+                        r /= w;
+                    }
+                }
+                else r = 1;
+                return r;
+            }
+
+            function pw_(w,q)
+            {
+                var i = 10;
+                while(Number.isInteger(i * q) == false)
+                {
+                    i *= 10;
+                }
+                var n = nod(i, i * q);
+                var mel = q * i / n;
+                var vol = Math.abs(i / n);
+
+                if (w < 0 && vol % 2 == 0)
+                    return 'Cтепень и основание степени не допустимы';
+                if (Math.abs(w) === 1) 
+                {
+                    if (mel % 2 === 0)  return 1;
+                    else  return w;
+                }
+                var ver = w;
+                var niz = 0.0;
+                while (pw(u, vol)  !== w)
+                {
+                    if (u === (ver + niz) / 2) 
+                        return pw(u,mel);
+
+                        var u = (ver + niz) / 2;
+
+                    if (Math.abs(pw(u, vol)) > Math.abs(w))
+                         ver = u;
+                    else niz = u;
+                }
+                return pw(u,mel);
+            }
+
+            if (Number.isNaN(parseFloat(x)) == false && Number.isNaN(parseFloat(y)) == false)
+            {
+                if (x == 0 && y < 0)
+                {
+                    alert('Не допускаются такие числа');
+                }
+                else {if (parseInt(y) === parseFloat(y)) 
+                     result = pw(x,y);
+                else result = pw_(x,y);
+                if (Number.isNaN(parseFloat(result))) 
+                    alert(result);
+                if (result == Infinity)
+                     alert('Превышен диапазон допустивых значений');
+                else alert('Число '+x+' в степени '+y+' равно '+ result);}
+            }
+            else alert('Не допустимый диапазон вводимых чисел');
         </script>
     </body>
 </html>
